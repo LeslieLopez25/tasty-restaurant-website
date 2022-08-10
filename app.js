@@ -49,9 +49,17 @@ window.addEventListener("scroll", scrollActive);
 
 /* CHANGE BACKGROUND HEADER */
 function scrollHeader() {
-  const header = document.getElementById("header");
+  const nav = document.getElementById("header");
   // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
   if (this.scrollY >= 200) nav.classList.add("scroll-header");
   else nav.classList.remove("scroll-header");
 }
 window.addEventListener("scroll", scrollHeader);
+
+// SHOW SCROLL TOP
+function scrollTop() {
+  const scrollTop = document.getElementById("scroll-top");
+  if (this.scrollY >= 560) scrollTop.classList.add("scroll-top");
+  else scrollTop.classList.remove("scroll-top");
+}
+window.addEventListener("scroll", scrollTop);
