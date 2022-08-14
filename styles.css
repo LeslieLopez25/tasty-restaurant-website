@@ -449,6 +449,7 @@ img {
 }
 
 /* MEDIA QUERIES */
+/* FOR SMALL DEVICES */
 @media screen and (min-width: 576px) {
 
     .home__container,
@@ -474,11 +475,71 @@ img {
     }
 
     .contact__container {
-        grid-template-columns: 1.75px 1fr;
+        grid-template-columns: 1.75fr 1fr;
         align-items: center;
     }
 
     .contact__button {
         justify-self: center;
+    }
+}
+
+/* FOR MEDIUM DEVICES */
+@media screen and (min-width: 768px) {
+    body {
+        margin: 0;
+    }
+
+    .section {
+        padding-top: 8rem;
+    }
+
+    .nav {
+        height: calc(var(--header-height) + 1.5rem);
+    }
+
+    .nav__list {
+        display: flex;
+    }
+
+    .nav__item {
+        margin-left: var(--mb-5);
+        margin-bottom: 0;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+
+    .change-theme {
+        position: initial;
+        margin-left: var(--mb-2);
+    }
+
+    .home__container {
+        height: 100vh;
+        justify-items: center;
+    }
+
+    .services__container,
+    .menu__container {
+        margin-top: var(--mb-6);
+    }
+
+    .menu__container {
+        grid-template-columns: repeat(3, 210px);
+        column-gap: 4rem;
+    }
+
+    .menu__content {
+        padding: 1.5rem;
+    }
+
+    .menu__img {
+        width: 130px;
+    }
+
+    .app__store {
+        margin: 0 var(--mb-1) 0 0;
     }
 }
