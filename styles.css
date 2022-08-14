@@ -64,6 +64,25 @@ html {
     scroll-behavior: smooth;
 }
 
+/* VARIABLES FOR DARK THEME */
+body.dark-theme {
+    --title-color: #f1f3f2;
+    --text-color: #c7d1cc;
+    --text-color-light: #a6a6a6;
+    --body-color: #1d2521;
+    --container-color: #27302c;
+}
+
+/* BUTTON DARK/LIGHT */
+.change-theme {
+    position: absolute;
+    right: 1rem;
+    top: 1.8rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
 body {
     margin: var(--header-height) 0 0 0;
     font-family: var(--body-font);
