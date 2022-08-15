@@ -63,3 +63,38 @@ function scrollTop() {
   else scrollTop.classList.remove("scroll-top");
 }
 window.addEventListener("scroll", scrollTop);
+
+// DARK/LIGHT THEME
+const themeButton = document.getElementById("theme-button");
+const darkTheme = "dark-theme";
+const iconTheme = "bx-sun";
+
+// PREVIOUSLY SELECTED TOPIC (IF USER SELECTED)
+const selectedTheme = localStorage.getItem("selected-theme");
+const selectedIcon = localStorage.getItem("selected-icon");
+
+// WE OBTAIN THE CURRENT THEME THAT THE INTERFACE HAS BY VALIDATING THE DARK-THEME CLASS
+const getCurrentTheme = () =>
+  document.body.classList.contains(darkTheme) ? "dark" : "light";
+const getCurrentIcon = () =>
+  themeButton.classList.contains(iconTheme) ? "bx-moon" : "bx-sun";
+
+// WE VALIDATE IF THE USER PREVIOUSLY CHOSE A TOPIC
+if (selectedTheme) {
+  // IF THE VALIDATION IS FULFILLED, WE ASK WHAT THE ISSUE WAS TO KNOW IF WE ACTIVATED OR DEACTIVATED THE DARK
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+    darkTheme
+  );
+  themeButton.classList[selectedIcon === "bx-moon" ? "add" : "remove"](
+    iconTheme
+  );
+}
+
+// ACTIVATE/DEACTIVATE THE THEME MANUALLY WITH THE BUTTON
+themeButton.addEventListener("click", () => {
+  document.body.classList.toggle(darkTheme);
+  themeButton.classList.toggle(iconTheme);
+  // WE SAVE THE THEME AND THE CURRENT ICON THAT THE USER CHOSE
+  localStorage.setItem("selected-theme", getCurrentTheme());
+  localStorage.setItem("selected-icon", getCurrentIcon());
+});
